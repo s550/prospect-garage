@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { EEXIST } from 'constants';
+import axios from 'axios';
 
 class CreateCar extends Component {
     constructor(props){
@@ -14,7 +15,6 @@ class CreateCar extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state ={
-            car_make: '',
             car_name: '',
             car_miles: '',
             car_price: '',
@@ -68,10 +68,23 @@ class CreateCar extends Component {
        console.log(`car_miles: ${this.state.car_miles}`);
        console.log(`car_price: ${this.state.car_price}`);
        console.log(`car_location: ${this.state.car_location}`);
-       console.log(`car_link: ${this.state.car_link}`)
+       console.log(`car_link: ${this.state.car_link}`);
+
+        const newCar = {
+            car_name: this.state.car_name,
+            car_miles: this.state.car_miles,
+            car_price: this.state.car_price,
+            car_location: this.state.car_location,
+            car_link: this.state.car_link,
+            car_notes: this.state.car_notes,
+            car_avalible: this.state.car_avalible
+        };
+
+        axios.post("http://localhost:4000/cars/add", newCar)
+            .then(res => 
+                console.log(res.data));
 
        this.setState({
-        car_make: '',
         car_name: '',
         car_miles: '',
         car_price: '',

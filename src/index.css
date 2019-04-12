@@ -1,3 +1,31 @@
 .pg-md{
   margin-top: 10px;
 }
+
+.top{
+  margin-top: 20px;
+}
+
+/* .microlink_card__content{
+  height:10px;
+  color: white;
+  border-bottom: white;
+} */
+
+.column{
+  width: 100%;
+}
+
+.microlink_card__media_image{
+  width: 100%;
+}
+
+.microlink_card{
+  height:20px;
+}
+
+.connector{
+  border: solid 1px black;
+  width: 499px;
+  word-wrap: break-word;
+}

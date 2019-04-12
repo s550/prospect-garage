@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import 'bulma/css/bulma.css';
-import TodoList from './components/car-list';
-import EditTodo from './components/car-edit';
-import CreateTodo from './components/car-create';
+import CarList from './components/car-list';
+import EditCar from './components/car-edit';
+import CreateCar from './components/car-create';
 
 
 
