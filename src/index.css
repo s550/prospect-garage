@@ -5,27 +5,47 @@
 .top{
   margin-top: 20px;
 }
-
-/* .microlink_card__content{
-  height:10px;
-  color: white;
-  border-bottom: white;
-} */
-
-.column{
-  width: 100%;
+.card{
+  width:30%;
+  margin: 20px;
 }
 
-.microlink_card__media_image{
-  width: 100%;
+.card-content{
+  margin-top:-100px;
+}
+
+.content ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.content ul li{
+  list-style: none;
+  
 }
 
 .microlink_card{
-  height:20px;
+  height:10px;
+  color: transparent !important;
+  border-color: transparent !important;
+  background: transparent !important;
 }
 
-.connector{
+/* .column{
+  width: 100%;
+} */
+
+/* .microlink_card__media_image{
+  width: 100%;
+} */
+
+/* .microlink_card{
+  height:20px;
+} */
+
+/* .connector{
   border: solid 1px black;
   width: 499px;
   word-wrap: break-word;
-}
+} */

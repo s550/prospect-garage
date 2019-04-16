@@ -6,10 +6,10 @@ let Car = new Schema({
         type: String
     },
     car_miles: {
-        type: Number
+        type: String
     },
     car_price: {
-        type: Number
+        type: String
     },
     car_location: {
         type: String
@@ -17,8 +17,8 @@ let Car = new Schema({
     car_link: {
         type: String
     },
-    car_notes: {
-        type: String
+    car_year: {
+        type: Number
     },
     car_availible: {
         type: Boolean

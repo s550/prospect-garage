@@ -11,7 +11,7 @@ class CreateCar extends Component {
         this.onChangeCarPrice = this.onChangeCarPrice.bind(this);
         this.onChangeCarLocation = this.onChangeCarLocation.bind(this);
         this.onChangeCarLink = this.onChangeCarLink.bind(this);
-        this.onChangeCarNotes = this.onChangeCarNotes.bind(this);
+        this.onChangeCarYear = this.onChangeCarYear.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state ={
@@ -20,7 +20,7 @@ class CreateCar extends Component {
             car_price: '',
             car_location: '',
             car_link: '',
-            car_notes: '',
+            car_year: '',
             car_avalible: true
         }
     }
@@ -55,9 +55,9 @@ class CreateCar extends Component {
         });
         // this.props.onSearch();
     }
-    onChangeCarNotes(e){
+    onChangeCarYear(e){
         this.setState({
-            car_notes: e.target.value
+            car_year: e.target.value
         });
         // this.props.onSearch();
     }
@@ -76,7 +76,7 @@ class CreateCar extends Component {
             car_price: this.state.car_price,
             car_location: this.state.car_location,
             car_link: this.state.car_link,
-            car_notes: this.state.car_notes,
+            car_year: this.state.car_year,
             car_avalible: this.state.car_avalible
         };
 
@@ -90,7 +90,7 @@ class CreateCar extends Component {
         car_price: '',
         car_location: '',
         car_link: '',
-        car_notes: '',
+        car_year: '',
         car_avalible: true
        })
     }
@@ -99,6 +99,12 @@ class CreateCar extends Component {
         return(
             <div className="pg-mid">
             <form onSubmit={this.onSubmit}>
+            <div className="field">
+            <label htmlFor="">Year: </label>
+                <div className="control">
+                    <input className="input is-primary" placeholder="Enter Year" type="text" value={this.state.car_year} onChange={this.onChangeCarYear} />
+                </div>
+                </div>
             <div className="field">
             <label htmlFor="">Make and Model: </label>
                 <div className="control">
@@ -129,12 +135,12 @@ class CreateCar extends Component {
                     <input className="input is-primary" placeholder="Enter Link to Ad" type="text" value={this.state.car_link} onChange={this.onChangeCarLink} />
                 </div>
                 </div>
-                <div class="field">
+                {/* <div class="field">
                     <label class="label">Additional Notes About The Car:</label>
                     <div class="control">
                         <textarea class="textarea" placeholder="Notes:" value={this.state.car_notes} onChange={this.onChangeCarNotes}></textarea>
                     </div>
-                </div>
+                </div> */}
                 <div className="field">
                     <input type="submit" value="Submit" className="button is-primary"/>
                 </div>

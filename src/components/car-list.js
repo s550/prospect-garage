@@ -4,21 +4,31 @@ import axios from 'axios';
 import MicrolinkCard from '@microlink/react';
 
 const Car = props => (
-        <div className="">
+        <div className="card">
         {/* <h3>{props.car.car_name}</h3> */}
+        <div className="card-image">
+        <figure className="image">
         <MicrolinkCard 
         url={props.car.car_link}
         size='large'
         // style='width: 100%'
         />
-        <div className="connector">
+        </figure>
+        </div>
+        <div className="card-content">
+        <div className="media">
+        <div className="media-content">
+        <p className="title">{props.car.car_name}</p>
+        <p className="subtitle">{props.car.car_year}</p>
+        </div>
+        </div>
+        <div className="content">
             <ul>
-                <li>Make/Model: {props.car.car_name}</li>
-                <li>Price: {props.car.car_price}</li>
-                <li>Miles: {props.car.car_miles}</li>
+                <li>Price: {props.car.car_price}$</li>
+                <li>Miles: {props.car.car_miles}mi</li>
                 <li>Location: {props.car.car_location}</li>
-                {/* <li>Notes: {props.car.car_notes}</li> */}
             </ul>
+        </div>
         </div>
         {/* <img src={ props.car.car_link } alt=""/> */}
         <Link to={"/edit/"+props.car._id}>Edit</Link>

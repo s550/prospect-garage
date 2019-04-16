@@ -54,7 +54,7 @@ carRoutes.route('/update/:id').post((req,res) => {
             car.car_price = req.body.car_price;
             car.car_location = req.body.car_location;
             car.car_link = req.body.car_link;
-            car.car_notes = req.body.car_notes;
+            car.car_notes = req.body.car_year;
             car.car_availible = req.body.car_availible;
             
             
