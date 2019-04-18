@@ -70,6 +70,32 @@ carRoutes.route('/update/:id').post((req,res) => {
     });
 });
 
+carRoutes.route('/delete/:id').delete((req,res) => {
+    Car.findById(req.params.id, (err,car) => {
+        if(!car){
+            res.status(404).send("Data cannot be found.");
+        } else{
+            car.car_name = "";
+            car.car_miles = "";
+            car.car_price = "";
+            car.car_location = "";
+            car.car_link = "";
+            car.car_notes = "";
+            car.car_availible = "";
+            
+            
+        }
+
+        car.remove()
+            .then(car => {
+                res.json("Car Listing Deleted!");
+            })
+            .catch(err =>{
+                res.status(404).send("Listing Cannot Be Deleted..")
+            });
+    });
+});
+
 app.use('/cars', carRoutes);
 
 

@@ -32,6 +32,7 @@ const Car = props => (
         </div>
         {/* <img src={ props.car.car_link } alt=""/> */}
         <Link to={"/edit/"+props.car._id}>Edit</Link>
+        
         </div>
 );
 
