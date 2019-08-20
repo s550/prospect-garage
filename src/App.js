@@ -4,6 +4,7 @@ import 'bulma/css/bulma.css';
 import CarList from './components/car-list';
 import EditCar from './components/car-edit';
 import CreateCar from './components/car-create';
+import DeleteCar from './components/car-delete';
 
 
 
@@ -41,6 +42,7 @@ class App extends Component {
           <Route path="/" exact component={CarList} />
           <Route path="/edit/:id" component={EditCar}/>
           <Route path="/create" component={CreateCar}/>
+          <Route path="/delete/:id" component={DeleteCar}/>
         </main>
         </div>
       </Router>

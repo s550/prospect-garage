@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { EEXIST } from 'constants';
 import axios from 'axios';
 
 class CreateCar extends Component {

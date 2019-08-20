@@ -3,7 +3,7 @@ import axios from 'axios';
 class EditCar extends Component{
     constructor(props){
         super(props);
-
+        // Binds the functions so they can be accessed
         this.onChangeCarName = this.onChangeCarName.bind(this);
         this.onChangeCarMiles = this.onChangeCarMiles.bind(this);
         this.onChangeCarPrice = this.onChangeCarPrice.bind(this);
@@ -61,23 +61,23 @@ class EditCar extends Component{
         this.setState({
             car_location: e.target.value
         });
-        // this.props.onSearch();
+        // setss car location to value entered
     }
     onChangeCarLink(e){
         this.setState({
             car_link: e.target.value
         });
-        // this.props.onSearch();
+        // Sets the link to the car ad to the value entered
     }
     onChangeCarYear(e){
         this.setState({
             car_year: e.target.value
         });
-        // this.props.onSearch();
+        // sets the year of the car to the value entered
     }
     onSubmit(e){
        e.preventDefault();
-
+        // on submit an object is created containing information of the edited car and posted to the backend
         const editedCar = {
             car_name: this.state.car_name,
             car_miles: this.state.car_miles,
@@ -92,7 +92,7 @@ class EditCar extends Component{
         axios.post("http://localhost:4000/cars/update/"+this.props.match.params.id, editedCar)
             .then(res => 
                 console.log(res.data));
-
+    //    returns the view back to the car list
        this.props.history.push('/')
     }
 

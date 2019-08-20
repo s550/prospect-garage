@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MicrolinkCard from '@microlink/react';
-import DelBtn from './car-delete';
+
 
 const Car = props => (
         <div className="card">
@@ -34,7 +34,7 @@ const Car = props => (
         {/* <img src={ props.car.car_link } alt=""/> */}
         <footer className="card-footer">
         <Link to={"/edit/"+props.car._id} className='button is-primary card-footer-item'>Edit</Link>
-        <Link to={"/delete/"} className="button is-danger card-footer-item">Delete</Link>
+        <Link to={"/delete/"+props.car._id} className="button is-danger card-footer-item">Delete</Link>
         </footer>
         </div>
 );

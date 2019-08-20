@@ -70,8 +70,8 @@ carRoutes.route('/update/:id').post((req,res) => {
     });
 });
 
-carRoutes.route('/delete/:id').delete((req,res) => {
-    Car.findById(req.params.id, (err,car) => {
+carRoutes.route('/delete/:id').get((req,res) => {
+    Car.findByIdAndRemove(req.params.id, (err,car) => {
         if(!car){
             res.status(404).send("Data cannot be found.");
         } else{
@@ -86,13 +86,13 @@ carRoutes.route('/delete/:id').delete((req,res) => {
             
         }
 
-        car.remove()
-            .then(car => {
-                res.json("Car Listing Deleted!");
-            })
-            .catch(err =>{
-                res.status(404).send("Listing Cannot Be Deleted..")
-            });
+        // car.remove()
+        //     .then(car => {
+        //         res.json("Car Listing Deleted!");
+        //     })
+        //     .catch(err =>{
+        //         res.status(404).send("Listing Cannot Be Deleted..")
+        //     });
     });
 });
 
