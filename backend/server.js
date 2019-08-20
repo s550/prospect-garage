@@ -21,7 +21,7 @@ carRoutes.route('/').get((req,res) =>
 
 Car.find((err,cars) => {
     if(err){
-        console.log(err);
+        console.log(err + " something went wrong with connecting to MongoDB");
     } else {
         res.json(cars);
     }
@@ -54,7 +54,7 @@ carRoutes.route('/update/:id').post((req,res) => {
             car.car_price = req.body.car_price;
             car.car_location = req.body.car_location;
             car.car_link = req.body.car_link;
-            car.car_notes = req.body.car_year;
+            car.car_year = req.body.car_year;
             car.car_availible = req.body.car_availible;
             
             
@@ -75,14 +75,14 @@ carRoutes.route('/delete/:id').delete((req,res) => {
         if(!car){
             res.status(404).send("Data cannot be found.");
         } else{
-            car.car_name = "";
-            car.car_miles = "";
-            car.car_price = "";
-            car.car_location = "";
-            car.car_link = "";
-            car.car_notes = "";
-            car.car_availible = "";
-            
+            // car.car_name = "";
+            // car.car_miles = "";
+            // car.car_price = "";
+            // car.car_location = "";
+            // car.car_link = "";
+            // car.car_notes = "";
+            // car.car_availible = "";
+          console.log("Deleting Now....");
             
         }
 

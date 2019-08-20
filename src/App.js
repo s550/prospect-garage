@@ -13,10 +13,10 @@ class App extends Component {
       <Router>
         <div className="container">
         <header>
-        <nav class="navbar is-fixed-top">
-          <div class="navbar-brand">
+        <nav className="navbar is-fixed-top">
+          <div className="navbar-brand">
             <a href="#">Prospect Garage</a>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+            <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
@@ -26,8 +26,8 @@ class App extends Component {
               <span aria-hidden="true"></span>
               </a>
             </div>     
-            <div id="navbarBasicExample" class="navbar-menu">
-              <div class="navbar-end">
+            <div id="navbarBasicExample" className="navbar-menu">
+              <div className="navbar-end">
                 <Link to="/" className="navbar-item">Home</Link>
                 <Link to="/create" className="navbar-item">Add A Listing</Link>
                </div>

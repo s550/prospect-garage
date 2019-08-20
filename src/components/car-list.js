@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MicrolinkCard from '@microlink/react';
+import DelBtn from './car-delete';
 
 const Car = props => (
         <div className="card">
@@ -24,17 +25,20 @@ const Car = props => (
         </div>
         <div className="content">
             <ul>
-                <li>Price: {props.car.car_price}$</li>
-                <li>Miles: {props.car.car_miles}mi</li>
+                <li>Price: ${props.car.car_price}</li>
+                <li>Miles: {props.car.car_miles}</li>
                 <li>Location: {props.car.car_location}</li>
             </ul>
         </div>
         </div>
         {/* <img src={ props.car.car_link } alt=""/> */}
-        <Link to={"/edit/"+props.car._id}>Edit</Link>
-        
+        <footer className="card-footer">
+        <Link to={"/edit/"+props.car._id} className='button is-primary card-footer-item'>Edit</Link>
+        <Link to={"/delete/"} className="button is-danger card-footer-item">Delete</Link>
+        </footer>
         </div>
 );
+
 
 class CarList extends Component {
     constructor(props){
